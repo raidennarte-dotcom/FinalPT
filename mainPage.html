@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard | Platform</title>
+    <link rel="stylesheet" href="MainStyle.css" />
+
+  </head>
+  <body class="app">
+    
+    <header class="topbar">
+      <img src="Icons/image2.png" alt="Image" width="4%">
+      <a href="/" class="topbar__brand">nulid</a>
+    
+      <form class="search" role="search" action="#" method="get">
+        <label class="visually-hidden" for="search-input">Search</label>
+        <input
+          class="search__input"
+          type="search"
+          id="search-input"
+          name="q"
+          placeholder="Search"
+        />
+      </form>
+
+      <button
+        type="button"
+        class="profile-toggle"
+        id="profile-toggle"
+        aria-expanded="false"
+        aria-controls="profile-panel"
+        aria-label="Open profile"
+      >
+        <span class="profile-toggle__avatar" id="toggle-avatar">
+          <!-- backend: profile picture <img src="..." alt=""> -->
+        </span>
+      </button>
+    </header>
+
+    <div class="dashboard">
+     
+      <aside class="composer-column" aria-label="Write a post">
+        <section class="composer" aria-labelledby="composer-title">
+          <h2 class="composer__title" id="composer-title">Write a post</h2>
+
+          <form
+            class="composer__form"
+            action="#"
+            method="post"
+            enctype="multipart/form-data"
+          >
+            <div class="composer__upload">
+              <label class="composer__upload-label" for="composer-files"
+                >Insert photo / files</label
+              >
+              <input
+                class="composer__upload-input"
+                type="file"
+                id="composer-files"
+                name="attachments"
+                multiple
+              />
+            </div>
+
+            <label class="visually-hidden" for="composer-input"
+              >Write your post</label
+            >
+            <textarea
+              class="composer__textarea"
+              id="composer-input"
+              name="content"
+              rows="5"
+              placeholder="What's on your mind?"
+            ></textarea>
+
+            <button type="submit" class="composer__submit">Post</button>
+          </form>
+        </section>
+      </aside>
+
+      <!-- ============ CENTER: FEED ============ -->
+      <main class="feed-column">
+        <section class="feed" aria-label="Feed">
+          <div class="feed__list" id="feed-list">
+
+          <article class="post">
+            <header class="post__header">
+              <div class="post__avatar"></div>
+              <div class="post__meta">
+                <p class="post__author"></p>
+                <time class="post__time"></time>
+              </div>
+            </header>
+            <div class="post__body"></div>
+            <footer class="post__actions">
+              <button type="button" class="post__action">Like</button>
+              <button type="button" class="post__action">Comment</button>
+              <button type="button" class="post__action">Share</button>
+            </footer>
+          </article>
+          </div>
+        </section>
+      </main>
+
+      <!-- PROFILE PANEL  -->
+
+      <aside
+        class="profile-panel"
+        id="profile-panel"
+        aria-labelledby="profile-title"
+        hidden
+      >
+        <div class="profile-panel__picture" id="user-avatar">
+          <!-- backend: profile picture <img src="..." alt="Profile picture"> -->
+        </div>
+
+        <h2 class="profile-panel__title" id="profile-title">Profile</h2>
+
+        <dl class="profile-panel__details">
+          <div class="profile-panel__row">
+            <dt>Full Name</dt>
+            <dd id="user-full-name"><!-- backend: full name --></dd>
+          </div>
+          <div class="profile-panel__row">
+            <dt>Age</dt>
+            <dd id="user-age"><!-- backend: age --></dd>
+          </div>
+          <div class="profile-panel__row">
+            <dt>Email Address</dt>
+            <dd id="user-email"><!-- backend: email --></dd>
+          </div>
+          <div class="profile-panel__row">
+            <dt>Account Status</dt>
+            <dd id="user-status"><!-- backend: status --></dd>   
+          </div>
+        </dl> 
+
+<div class="settings-group">
+  <button type="button" class="settings-group__toggle" id="settings-toggle"
+          aria-expanded="false" aria-controls="settings-menu">
+    <span>Settings</span>
+    <span class="settings-group__chevron" aria-hidden="true"></span>
+  </button>
+  <ul class="settings-menu" id="settings-menu" hidden>
+    <li>
+      <button type="button" class="settings-menu__item" id="edit-profile-button">Edit Profile</button>
+    </li>
+  </ul>
+</div>
+
+
+<div class="profile-panel__settings">
+  <h3 class="profile-panel__settings-title">I lab yo</h3>
+  <button type="button" class="profile-panel__theme-button" id="theme-toggle"
+          aria-pressed="false">
+    Dark Mode
+  </button>
+</div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
